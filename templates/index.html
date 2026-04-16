@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="page-content">
+    <div class="home-section">
+        {{ section.content | safe }}
+    </div>
+
+    {% set blog = get_section(path="blog/_index.md") %}
+    <div class="home-section">
+        <h2>Recent Posts</h2>
+        {% if blog.pages %}
+        <ul class="section-list">
+        {% for page in blog.pages | slice(end=5) %}
+            <li class="section-item">
+                <a href="{{ page.permalink }}" class="section-item-title">{{ page.title }}</a>
+                <div class="section-item-meta">
+                    <time datetime="{{ page.date }}">{{ page.date | date(format="%B %e, %Y") }}</time>
+                </div>
+                {% if page.description %}
+                <div class="section-item-description">{{ page.description }}</div>
+                {% endif %}
+            </li>
+        {% endfor %}
+        </ul>
+        {% else %}
+        <p>No posts yet.</p>
+        {% endif %}
+    </div>
+
+    {% set docs = get_section(path="docs/_index.md") %}
+    <div class="home-section">
+        <h2>Recent Documentation</h2>
+        {% set all_doc_pages = [] %}
+        {% for page in docs.pages %}
+            {% set_global all_doc_pages = all_doc_pages | concat(with=[page]) %}
+        {% endfor %}
+        {% for subsection_path in docs.subsections %}
+            {% set subsection = get_section(path=subsection_path) %}
+            {% for page in subsection.pages %}
+                {% set_global all_doc_pages = all_doc_pages | concat(with=[page]) %}
+            {% endfor %}
+        {% endfor %}
+        {% if all_doc_pages %}
+        <ul class="section-list">
+        {% for page in all_doc_pages | sort(attribute="date") | reverse | slice(end=5) %}
+            <li class="section-item">
+                <a href="{{ page.permalink }}" class="section-item-title">{{ page.title }}</a>
+                <div class="section-item-meta">
+                    {% if page.date %}
+                    <time datetime="{{ page.date }}">{{ page.date | date(format="%B %e, %Y") }}</time>
+                    {% endif %}
+                </div>
+                {% if page.description %}
+                <div class="section-item-description">{{ page.description }}</div>
+                {% endif %}
+            </li>
+        {% endfor %}
+        </ul>
+        {% else %}
+        <p>No documentation yet.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}

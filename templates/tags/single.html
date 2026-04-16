@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}{{ term.name }} | {{ config.title }}{% endblock title %}
+
+{% block content %}
+<div class="page-content">
+    <h1>Tagged: {{ term.name }}</h1>
+    <ul class="section-list">
+    {% for page in term.pages %}
+        <li class="section-item">
+            <a href="{{ page.permalink }}" class="section-item-title">{{ page.title }}</a>
+            <div class="section-item-meta">
+                {% if page.date %}
+                    <time datetime="{{ page.date }}">{{ page.date | date(format="%B %e, %Y") }}</time>
+                {% endif %}
+            </div>
+            {% if page.description %}
+            <div class="section-item-description">{{ page.description }}</div>
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+{% endblock content %}

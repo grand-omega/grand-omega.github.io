@@ -4,16 +4,15 @@ description = "Knowledge base and blog for Grand Omega"
 compile_sass = true
 build_search_index = true
 generate_feeds = false
+taxonomies = [{name = "tags", feed = false}]
 
-[markdown]
-highlighting = {theme = "solarized-light"}
+[markdown.highlighting]
+theme = "dracula"
 
 [search]
 include_title = true
 include_description = true
 include_path = true
 include_content = true
-
-taxonomies = [{name = "tags", feed = false}]
 
 [extra]
