@@ -1,0 +1,19 @@
+base_url = "https://grand-omega.github.io"
+title = "Grand Omega"
+description = "Knowledge base and blog for Grand Omega"
+compile_sass = true
+build_search_index = true
+generate_feeds = false
+
+[markdown]
+highlighting = {theme = "solarized-light"}
+
+[search]
+include_title = true
+include_description = true
+include_path = true
+include_content = true
+
+taxonomies = [{name = "tags", feed = false}]
+
+[extra]
