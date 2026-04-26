@@ -1,13 +1,13 @@
 +++
 title = "Getting Started"
 date = 2026-04-15
-description = "How to get started contributing to Grand Omega."
+description = "How to get started contributing to Grand Ωmega."
 
 [taxonomies]
 tags = ["guides", "onboarding"]
 +++
 
-This guide covers how to get started with Grand Omega's knowledge base.
+This guide covers how to get started with Grand Ωmega's knowledge base.
 
 ## Prerequisites
 

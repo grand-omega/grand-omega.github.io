@@ -34,7 +34,7 @@ between them is a single flag.
 
 ## Repositories
 
-### [project-zun](https://github.com/grand-omega/project-zun)
+### [zun-flux-pipeline](https://github.com/grand-omega/zun-flux-pipeline)
 
 The ML core. ComfyUI workflows (10 of them), training configs, dataset
 prep, and inference recipes. The shipped project is ~100 KB of config and

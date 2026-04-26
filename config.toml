@@ -1,6 +1,6 @@
 base_url = "https://grand-omega.github.io"
-title = "Grand Omega"
-description = "Knowledge base and blog for Grand Omega"
+title = "Grand Ωmega"
+description = "Knowledge base and blog for Grand Ωmega"
 compile_sass = true
 build_search_index = true
 generate_feeds = false

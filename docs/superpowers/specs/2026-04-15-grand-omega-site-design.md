@@ -1,8 +1,8 @@
-# Grand Omega GitHub Pages Site — Design Spec
+# Grand Ωmega GitHub Pages Site — Design Spec
 
 ## Overview
 
-A static content site for the Grand Omega organization, built with Zola and deployed via GitHub Actions to `grand-omega.github.io`. The site serves two purposes: a wiki-style knowledge base (internal guides + per-project documentation) and a chronological blog. The visual design is minimal and content-first, inspired by the Arch Wiki and GitHub's documentation style.
+A static content site for the Grand Ωmega organization, built with Zola and deployed via GitHub Actions to `grand-omega.github.io`. The site serves two purposes: a wiki-style knowledge base (internal guides + per-project documentation) and a chronological blog. The visual design is minimal and content-first, inspired by the Arch Wiki and GitHub's documentation style.
 
 ## Site Structure
 
