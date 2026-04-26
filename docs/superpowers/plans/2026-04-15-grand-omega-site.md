@@ -1,8 +1,8 @@
-# Grand Omega Zola Site Implementation Plan
+# Grand Ωmega Zola Site Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Build a wiki + blog static site for Grand Omega using Zola, with custom theme, search, tags, and GitHub Actions deployment.
+**Goal:** Build a wiki + blog static site for Grand Ωmega using Zola, with custom theme, search, tags, and GitHub Actions deployment.
 
 **Architecture:** Zola static site generator with a custom theme built from scratch. Four Tera templates (`base.html`, `index.html`, `page.html`, `section.html`) styled with plain Sass. Content organized as `docs/` (wiki) and `blog/` sections with shared tags taxonomy. Deployed via GitHub Actions to GitHub Pages.
 
@@ -48,8 +48,8 @@
 
 ```toml
 base_url = "https://grand-omega.github.io"
-title = "Grand Omega"
-description = "Knowledge base and blog for Grand Omega"
+title = "Grand Ωmega"
+description = "Knowledge base and blog for Grand Ωmega"
 compile_sass = true
 build_search_index = true
 generate_feeds = false
@@ -75,11 +75,11 @@ feed = false
 
 ```markdown
 +++
-title = "Grand Omega"
+title = "Grand Ωmega"
 sort_by = "date"
 +++
 
-Welcome to **Grand Omega** — our knowledge base and blog.
+Welcome to **Grand Ωmega** — our knowledge base and blog.
 
 Browse the [documentation](/docs/) or read the [blog](/blog/).
 ```
@@ -176,7 +176,7 @@ git commit -m "feat: add Zola config and content structure"
 
     <footer class="site-footer">
         <div class="footer-container">
-            <p>&copy; {{ now() | date(format="%Y") }} Grand Omega</p>
+            <p>&copy; {{ now() | date(format="%Y") }} Grand Ωmega</p>
         </div>
     </footer>
 
@@ -1015,17 +1015,17 @@ git commit -m "feat: add client-side search with elasticlunr"
 +++
 title = "Hello World"
 date = 2026-04-15
-description = "Welcome to the Grand Omega blog."
+description = "Welcome to the Grand Ωmega blog."
 
 [taxonomies]
 tags = ["announcement"]
 +++
 
-Welcome to the Grand Omega blog. This is our first post.
+Welcome to the Grand Ωmega blog. This is our first post.
 
-## What is Grand Omega?
+## What is Grand Ωmega?
 
-Grand Omega is a collaborative organization focused on building and sharing knowledge.
+Grand Ωmega is a collaborative organization focused on building and sharing knowledge.
 
 ## What to expect
 
@@ -1044,13 +1044,13 @@ Stay tuned for more content.
 +++
 title = "Getting Started"
 date = 2026-04-15
-description = "How to get started contributing to Grand Omega."
+description = "How to get started contributing to Grand Ωmega."
 
 [taxonomies]
 tags = ["guides", "onboarding"]
 +++
 
-This guide covers how to get started with Grand Omega's knowledge base.
+This guide covers how to get started with Grand Ωmega's knowledge base.
 
 ## Prerequisites
 

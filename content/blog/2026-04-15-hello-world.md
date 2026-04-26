@@ -1,17 +1,17 @@
 +++
 title = "Hello World"
 date = 2026-04-15
-description = "Welcome to the Grand Omega blog."
+description = "Welcome to the Grand Ωmega blog."
 
 [taxonomies]
 tags = ["announcement"]
 +++
 
-Welcome to the Grand Omega blog. This is our first post.
+Welcome to the Grand Ωmega blog. This is our first post.
 
-## What is Grand Omega?
+## What is Grand Ωmega?
 
-Grand Omega is a collaborative organization focused on building and sharing knowledge.
+Grand Ωmega is a collaborative organization focused on building and sharing knowledge.
 
 ## What to expect
 
