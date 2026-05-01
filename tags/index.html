@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tags | Grand Ωmega</title>
+    <meta name="description" content="Knowledge base and blog for Grand Ωmega">
+    <link rel="stylesheet" href="https://grand-omega.github.io/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav-container">
+            <a href="https://grand-omega.github.io" class="site-title">Grand Ωmega</a>
+            <ul class="nav-links">
+                <li><a href="https://grand-omega.github.io/projects">Projects</a></li>
+                <li><a href="https://grand-omega.github.io/docs">Docs</a></li>
+                <li><a href="https://grand-omega.github.io/blog">Blog</a></li>
+                <li><a href="https://grand-omega.github.io/tags">Tags</a></li>
+            </ul>
+            <div class="nav-right">
+                <div class="search-wrapper">
+                    <input type="search" id="search-input" placeholder="Search..." aria-label="Search">
+                    <div id="search-results" class="search-results" hidden></div>
+                </div>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon-light">☀</span>
+                    <span class="theme-icon-dark">☾</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        
+<div class="page-content">
+    <h1>Tags</h1>
+    <ul class="tags-list">
+    
+        <li class="tags-list-item">
+            <a href="https:&#x2F;&#x2F;grand-omega.github.io&#x2F;tags&#x2F;announcement&#x2F;">
+                announcement
+                <span class="tag-count">(1)</span>
+            </a>
+        </li>
+    
+        <li class="tags-list-item">
+            <a href="https:&#x2F;&#x2F;grand-omega.github.io&#x2F;tags&#x2F;guides&#x2F;">
+                guides
+                <span class="tag-count">(1)</span>
+            </a>
+        </li>
+    
+        <li class="tags-list-item">
+            <a href="https:&#x2F;&#x2F;grand-omega.github.io&#x2F;tags&#x2F;onboarding&#x2F;">
+                onboarding
+                <span class="tag-count">(1)</span>
+            </a>
+        </li>
+    
+    </ul>
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Grand Ωmega</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://grand-omega.github.io/elasticlunr.min.js"></script>
+    <script src="https://grand-omega.github.io/search_index.en.js"></script>
+    <script src="https://grand-omega.github.io/search.js"></script>
+    
+    <script>
+        (function() {
+            var theme = localStorage.getItem('theme');
+            if (!theme) {
+                theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.setAttribute('data-theme', theme);
+
+            document.getElementById('theme-toggle').addEventListener('click', function() {
+                var current = document.documentElement.getAttribute('data-theme');
+                var next = current === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', next);
+                localStorage.setItem('theme', next);
+            });
+        })();
+    </script>
+</body>
+</html>

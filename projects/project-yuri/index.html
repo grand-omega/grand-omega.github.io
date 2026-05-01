@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project Yuri | Grand Ωmega</title>
+    <meta name="description" content="Authorized-dealer storefront under Grand Ωmega for Yuri Workshop, an Italian luxury maker of fencing foils. In development.">
+    <link rel="stylesheet" href="https://grand-omega.github.io/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav-container">
+            <a href="https://grand-omega.github.io" class="site-title">Grand Ωmega</a>
+            <ul class="nav-links">
+                <li><a href="https://grand-omega.github.io/projects">Projects</a></li>
+                <li><a href="https://grand-omega.github.io/docs">Docs</a></li>
+                <li><a href="https://grand-omega.github.io/blog">Blog</a></li>
+                <li><a href="https://grand-omega.github.io/tags">Tags</a></li>
+            </ul>
+            <div class="nav-right">
+                <div class="search-wrapper">
+                    <input type="search" id="search-input" placeholder="Search..." aria-label="Search">
+                    <div id="search-results" class="search-results" hidden></div>
+                </div>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon-light">☀</span>
+                    <span class="theme-icon-dark">☾</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        
+<div class="page-wrapper">
+    <article class="page-content">
+        <h1>Project Yuri</h1>
+        <div class="page-meta">
+            
+                <time datetime="2026-05-01">May  1, 2026</time>
+            
+        </div>
+
+        <p><strong>Project Yuri</strong> is the Grand Ωmega authorized-dealer storefront for
+<strong>Yuri Workshop</strong>, an Italian luxury maker of fencing foils and blades.</p>
+<p>The site is the dealer storefront — not the manufacturer's site — built
+to sell Yuri Workshop equipment to the competitive-fencing community
+under a Grand Ωmega-operated brand.</p>
+<h2 id="repositories">Repositories</h2>
+<h3 id="yuri-shop-site"><a href="https://github.com/grand-omega/yuri-shop-site">yuri-shop-site</a></h3>
+<p>The storefront. A full-stack Rust web app: server-rendered with
+WASM-hydrated interactivity, a SQLite-backed product catalog, cart and
+inquiry flows, and form validation.</p>
+<p><strong>Stack:</strong> Rust, Leptos, Axum, SQLx, SQLite, WASM.</p>
+<h2 id="status">Status</h2>
+<p><strong>In development.</strong> Catalog, cart, and inquiry forms are wired end-to-end;
+brand identity and product photography are being finalized before public
+launch.</p>
+
+
+        
+    </article>
+
+    
+    <aside class="toc-sidebar">
+        <div class="toc-title">On this page</div>
+        <ul>
+        
+            <li>
+                <a href="https:&#x2F;&#x2F;grand-omega.github.io&#x2F;projects&#x2F;project-yuri&#x2F;#repositories">Repositories</a>
+                
+                <ul>
+                    
+                    <li><a href="https:&#x2F;&#x2F;grand-omega.github.io&#x2F;projects&#x2F;project-yuri&#x2F;#yuri-shop-site">yuri-shop-site</a></li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li>
+                <a href="https:&#x2F;&#x2F;grand-omega.github.io&#x2F;projects&#x2F;project-yuri&#x2F;#status">Status</a>
+                
+            </li>
+        
+        </ul>
+    </aside>
+    
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Grand Ωmega</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://grand-omega.github.io/elasticlunr.min.js"></script>
+    <script src="https://grand-omega.github.io/search_index.en.js"></script>
+    <script src="https://grand-omega.github.io/search.js"></script>
+    
+    <script>
+        (function() {
+            var theme = localStorage.getItem('theme');
+            if (!theme) {
+                theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.setAttribute('data-theme', theme);
+
+            document.getElementById('theme-toggle').addEventListener('click', function() {
+                var current = document.documentElement.getAttribute('data-theme');
+                var next = current === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', next);
+                localStorage.setItem('theme', next);
+            });
+        })();
+    </script>
+</body>
+</html>

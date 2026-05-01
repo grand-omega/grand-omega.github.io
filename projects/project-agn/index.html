@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project AGN | Grand Ωmega</title>
+    <meta name="description" content="An agentic framework for academic research — paper-writing pipelines, GPU-shader R&amp;D, and an AI conference reviewer (coming soon).">
+    <link rel="stylesheet" href="https://grand-omega.github.io/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav-container">
+            <a href="https://grand-omega.github.io" class="site-title">Grand Ωmega</a>
+            <ul class="nav-links">
+                <li><a href="https://grand-omega.github.io/projects">Projects</a></li>
+                <li><a href="https://grand-omega.github.io/docs">Docs</a></li>
+                <li><a href="https://grand-omega.github.io/blog">Blog</a></li>
+                <li><a href="https://grand-omega.github.io/tags">Tags</a></li>
+            </ul>
+            <div class="nav-right">
+                <div class="search-wrapper">
+                    <input type="search" id="search-input" placeholder="Search..." aria-label="Search">
+                    <div id="search-results" class="search-results" hidden></div>
+                </div>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon-light">☀</span>
+                    <span class="theme-icon-dark">☾</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        
+<div class="page-wrapper">
+    <article class="page-content">
+        <h1>Project AGN</h1>
+        <div class="page-meta">
+            
+                <time datetime="2026-05-01">May  1, 2026</time>
+            
+        </div>
+
+        <p><strong>Project AGN</strong> <em>(Agent)</em> is an agentic framework for academic research.</p>
+<p>Rather than build yet another agent runtime, AGN orchestrates <strong>role-
+specialized Claude Code agents</strong> as persistent actors — literature
+reviewer, experimenter, paper writer, reviewer — wired together with
+SQLite state and JSONL event logs.</p>
+<h2 id="repositories">Repositories</h2>
+<h3 id="agn-paper-machine"><a href="https://github.com/grand-omega/agn-paper-machine">agn-paper-machine</a></h3>
+<p>An autonomous research-paper generation pipeline. A Python orchestration
+layer drives a team of role-specialized agents through literature review,
+experiment design, drafting, and self-review, with persistent memory and
+explicit message budgeting.</p>
+<p><strong>Stack:</strong> Python, Claude Code as runtime, SQLite, JSONL events.</p>
+<h3 id="agn-shader-framework"><a href="https://github.com/grand-omega/agn-shader-framework">agn-shader-framework</a></h3>
+<p>A multi-agent framework for GPU and shader R&amp;D — planner, coder, analyst,
+git-ops, LaTeX reporter, dashboard. Currently early-stage scaffolding for
+agent-team experimentation.</p>
+<p><strong>Stack:</strong> Python, <code>uv</code>, pytest, ruff, vectorbt.</p>
+<h2 id="roadmap">Roadmap</h2>
+<ul>
+<li><strong>AI conference reviewer</strong> — coming soon. An automated reviewer agent
+for academic submissions, sharing the same role/state primitives as
+the paper machine.</li>
+</ul>
+<h2 id="status">Status</h2>
+<p><strong>Mature prototype</strong> for the paper machine; <strong>early scaffolding</strong> for the
+shader framework. Active development across both.</p>
+
+
+        
+    </article>
+
+    
+    <aside class="toc-sidebar">
+        <div class="toc-title">On this page</div>
+        <ul>
+        
+            <li>
+                <a href="https:&#x2F;&#x2F;grand-omega.github.io&#x2F;projects&#x2F;project-agn&#x2F;#repositories">Repositories</a>
+                
+                <ul>
+                    
+                    <li><a href="https:&#x2F;&#x2F;grand-omega.github.io&#x2F;projects&#x2F;project-agn&#x2F;#agn-paper-machine">agn-paper-machine</a></li>
+                    
+                    <li><a href="https:&#x2F;&#x2F;grand-omega.github.io&#x2F;projects&#x2F;project-agn&#x2F;#agn-shader-framework">agn-shader-framework</a></li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li>
+                <a href="https:&#x2F;&#x2F;grand-omega.github.io&#x2F;projects&#x2F;project-agn&#x2F;#roadmap">Roadmap</a>
+                
+            </li>
+        
+            <li>
+                <a href="https:&#x2F;&#x2F;grand-omega.github.io&#x2F;projects&#x2F;project-agn&#x2F;#status">Status</a>
+                
+            </li>
+        
+        </ul>
+    </aside>
+    
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Grand Ωmega</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://grand-omega.github.io/elasticlunr.min.js"></script>
+    <script src="https://grand-omega.github.io/search_index.en.js"></script>
+    <script src="https://grand-omega.github.io/search.js"></script>
+    
+    <script>
+        (function() {
+            var theme = localStorage.getItem('theme');
+            if (!theme) {
+                theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.setAttribute('data-theme', theme);
+
+            document.getElementById('theme-toggle').addEventListener('click', function() {
+                var current = document.documentElement.getAttribute('data-theme');
+                var next = current === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', next);
+                localStorage.setItem('theme', next);
+            });
+        })();
+    </script>
+</body>
+</html>

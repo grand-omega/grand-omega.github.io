@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project ZUN | Grand Ωmega</title>
+    <meta name="description" content="Local, self-hosted AI image editor built on FLUX.1 Fill and FLUX 2 klein. Runs on a single 16 GB consumer GPU.">
+    <link rel="stylesheet" href="https://grand-omega.github.io/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav-container">
+            <a href="https://grand-omega.github.io" class="site-title">Grand Ωmega</a>
+            <ul class="nav-links">
+                <li><a href="https://grand-omega.github.io/projects">Projects</a></li>
+                <li><a href="https://grand-omega.github.io/docs">Docs</a></li>
+                <li><a href="https://grand-omega.github.io/blog">Blog</a></li>
+                <li><a href="https://grand-omega.github.io/tags">Tags</a></li>
+            </ul>
+            <div class="nav-right">
+                <div class="search-wrapper">
+                    <input type="search" id="search-input" placeholder="Search..." aria-label="Search">
+                    <div id="search-results" class="search-results" hidden></div>
+                </div>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon-light">☀</span>
+                    <span class="theme-icon-dark">☾</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        
+<div class="page-wrapper">
+    <article class="page-content">
+        <h1>Project ZUN</h1>
+        <div class="page-meta">
+            
+                <time datetime="2026-04-24">April 24, 2026</time>
+            
+        </div>
+
+        <p><strong>Project ZUN</strong> is a complete, self-hosted stack for instruction-driven and
+mask-based image editing. Everything runs on a single consumer GPU
+(<strong>RTX 4070 Ti Super, 16 GB VRAM</strong>), from a photo to a finished edit in
+roughly <strong>7 seconds</strong> per job.</p>
+<p>Designed for one user, one workstation, one phone — no cloud, no
+multi-tenant complexity, no subscriptions.</p>
+<h2 id="two-inference-tracks">Two inference tracks</h2>
+<table><thead><tr><th>Track</th><th>What it's for</th><th>Speed</th></tr></thead><tbody>
+<tr><td><strong>FLUX.1 Fill</strong></td><td>Mask-based inpainting with auto-masking (GroundingDINO + SAM). Strongest identity preservation; supports FLUX.1 LoRAs.</td><td>Standard</td></tr>
+<tr><td><strong>FLUX 2 klein</strong></td><td>Maskless, instruction-driven editing with a 4B-parameter model. Primary track.</td><td>5–6× faster</td></tr>
+</tbody></table>
+<p>Both tracks are driven through the same HTTP workflow runner, so switching
+between them is a single flag.</p>
+<h2 id="what-s-in-the-box">What's in the box</h2>
+<ul>
+<li><strong>Custom-outfit editing</strong> with trained subject LoRAs</li>
+<li><strong>Full LoRA training pipelines</strong> for both FLUX.1 (ai-toolkit) and FLUX 2
+klein (musubi-tuner) — on the same 16 GB GPU used for inference</li>
+<li><strong>Dataset prep tooling</strong> with JoyCaption for automatic captioning and
+structural validation</li>
+<li><strong>Clean HTTP API</strong> and a native mobile client — drive the system from
+your couch</li>
+</ul>
+<h2 id="repositories">Repositories</h2>
+<h3 id="zun-flux-pipeline"><a href="https://github.com/grand-omega/zun-flux-pipeline">zun-flux-pipeline</a></h3>
+<p>The ML core. ComfyUI workflows (10 of them), training configs, dataset
+prep, and inference recipes. The shipped project is ~100 KB of config and
+source; the reconstructed working system is ~90 GB after model downloads.</p>
+<p><strong>Stack:</strong> Python, ComfyUI, FLUX.1 Fill, FLUX 2 klein, SAM1/SAM2,
+GroundingDINO, ai-toolkit, musubi-tuner.</p>
+<h3 id="zun-rust-server"><a href="https://github.com/grand-omega/zun-rust-server">zun-rust-server</a></h3>
+<p>The API layer. A single-user Rust server wrapping ComfyUI with:</p>
+<ul>
+<li>Job orchestration with a SQLite (WAL) queue</li>
+<li>Crash recovery on restart</li>
+<li>A background health monitor probing ComfyUI every 30 s</li>
+<li>Bearer-token auth over LAN or Tailscale — no public exposure required</li>
+</ul>
+<p><strong>Stack:</strong> Rust, axum 0.8, sqlx, tokio, reqwest (pure-Rust TLS).</p>
+<h3 id="zun-android-app"><a href="https://github.com/grand-omega/zun-android-app">zun-android-app</a></h3>
+<p>The client. A high-performance Android app optimized for the
+<strong>Samsung Galaxy Z Fold 7</strong>:</p>
+<ul>
+<li>Dynamic two-pane layouts and adaptive List-Detail scaffolds</li>
+<li>Biometric lockout with customizable timer</li>
+<li>Immersive photo viewer with pinch-zoom and swipe-between-generations</li>
+<li>2048px automatic downscaling and real-time upload progress</li>
+<li>Encrypted credential storage, <code>Authorization: Bearer</code> contract</li>
+</ul>
+<p><strong>Stack:</strong> Kotlin, Jetpack Compose.</p>
+<h3 id="zun-zola-site"><a href="https://github.com/grand-omega/zun-zola-site">zun-zola-site</a></h3>
+<p>The product-launch site for ZUN — branded phone-frame mockups, before/after
+galleries, and the marketing entry point.</p>
+<p><strong>Stack:</strong> Zola, SCSS.</p>
+<h2 id="design-philosophy">Design philosophy</h2>
+<ul>
+<li><strong>Local-first.</strong> Your photos never leave your network.</li>
+<li><strong>Single-user, self-hosted.</strong> No multi-tenant complexity, no cloud bills.</li>
+<li><strong>Consumer hardware.</strong> One GPU. One phone. One workstation.</li>
+<li><strong>Shippable is small.</strong> The entire orchestrated system reconstructs from
+~100 KB of source plus model downloads.</li>
+</ul>
+<h2 id="status">Status</h2>
+<p><strong>v2.0.0</strong> — FLUX.1 Fill and FLUX 2 klein inference, klein LoRA training,
+multi-reference edits, face restore. End-to-end verified against real
+FLUX 2 klein at ~7 s per job.</p>
+
+
+        
+    </article>
+
+    
+    <aside class="toc-sidebar">
+        <div class="toc-title">On this page</div>
+        <ul>
+        
+            <li>
+                <a href="https:&#x2F;&#x2F;grand-omega.github.io&#x2F;projects&#x2F;project-zun&#x2F;#two-inference-tracks">Two inference tracks</a>
+                
+            </li>
+        
+            <li>
+                <a href="https:&#x2F;&#x2F;grand-omega.github.io&#x2F;projects&#x2F;project-zun&#x2F;#what-s-in-the-box">What&#x27;s in the box</a>
+                
+            </li>
+        
+            <li>
+                <a href="https:&#x2F;&#x2F;grand-omega.github.io&#x2F;projects&#x2F;project-zun&#x2F;#repositories">Repositories</a>
+                
+                <ul>
+                    
+                    <li><a href="https:&#x2F;&#x2F;grand-omega.github.io&#x2F;projects&#x2F;project-zun&#x2F;#zun-flux-pipeline">zun-flux-pipeline</a></li>
+                    
+                    <li><a href="https:&#x2F;&#x2F;grand-omega.github.io&#x2F;projects&#x2F;project-zun&#x2F;#zun-rust-server">zun-rust-server</a></li>
+                    
+                    <li><a href="https:&#x2F;&#x2F;grand-omega.github.io&#x2F;projects&#x2F;project-zun&#x2F;#zun-android-app">zun-android-app</a></li>
+                    
+                    <li><a href="https:&#x2F;&#x2F;grand-omega.github.io&#x2F;projects&#x2F;project-zun&#x2F;#zun-zola-site">zun-zola-site</a></li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li>
+                <a href="https:&#x2F;&#x2F;grand-omega.github.io&#x2F;projects&#x2F;project-zun&#x2F;#design-philosophy">Design philosophy</a>
+                
+            </li>
+        
+            <li>
+                <a href="https:&#x2F;&#x2F;grand-omega.github.io&#x2F;projects&#x2F;project-zun&#x2F;#status">Status</a>
+                
+            </li>
+        
+        </ul>
+    </aside>
+    
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Grand Ωmega</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://grand-omega.github.io/elasticlunr.min.js"></script>
+    <script src="https://grand-omega.github.io/search_index.en.js"></script>
+    <script src="https://grand-omega.github.io/search.js"></script>
+    
+    <script>
+        (function() {
+            var theme = localStorage.getItem('theme');
+            if (!theme) {
+                theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.setAttribute('data-theme', theme);
+
+            document.getElementById('theme-toggle').addEventListener('click', function() {
+                var current = document.documentElement.getAttribute('data-theme');
+                var next = current === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', next);
+                localStorage.setItem('theme', next);
+            });
+        })();
+    </script>
+</body>
+</html>

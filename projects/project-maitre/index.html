@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project Maître | Grand Ωmega</title>
+    <meta name="description" content="AI bout analysis for competitive fencers and their coaches. Server foundations shipped; analysis pipeline in development.">
+    <link rel="stylesheet" href="https://grand-omega.github.io/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav-container">
+            <a href="https://grand-omega.github.io" class="site-title">Grand Ωmega</a>
+            <ul class="nav-links">
+                <li><a href="https://grand-omega.github.io/projects">Projects</a></li>
+                <li><a href="https://grand-omega.github.io/docs">Docs</a></li>
+                <li><a href="https://grand-omega.github.io/blog">Blog</a></li>
+                <li><a href="https://grand-omega.github.io/tags">Tags</a></li>
+            </ul>
+            <div class="nav-right">
+                <div class="search-wrapper">
+                    <input type="search" id="search-input" placeholder="Search..." aria-label="Search">
+                    <div id="search-results" class="search-results" hidden></div>
+                </div>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="theme-icon-light">☀</span>
+                    <span class="theme-icon-dark">☾</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        
+<div class="page-wrapper">
+    <article class="page-content">
+        <h1>Project Maître</h1>
+        <div class="page-meta">
+            
+                <time datetime="2026-04-24">April 24, 2026</time>
+            
+        </div>
+
+        <p><strong>Project Maître</strong> is an AI analysis tool purpose-built for competitive
+fencers and their coaches.</p>
+<p>Maître ingests bout footage and extracts the things that actually matter on
+the strip — tempo, distance, action sequences, decision patterns — so
+athletes can review competitions with clarity instead of hours of manual
+tagging.</p>
+<h2 id="repositories">Repositories</h2>
+<h3 id="maitre-rust-server"><a href="https://github.com/grand-omega/maitre-rust-server">maitre-rust-server</a></h3>
+<p>The service backbone. A Rust API server with manually provisioned private
+user groups and session-based authentication — the foundation the bout
+analyzer will sit on.</p>
+<ul>
+<li>Argon2 password hashing</li>
+<li><code>tower-sessions</code> session management</li>
+<li>Bearer-token API surface</li>
+<li>Provisioning workflow documented in-repo</li>
+</ul>
+<p><strong>Stack:</strong> Rust, Axum, Tokio, <code>tower-sessions</code>, Argon2.</p>
+<h2 id="status">Status</h2>
+<p><strong>Server foundations shipped.</strong> The bout-analysis pipeline (footage
+ingestion, action segmentation, tempo/distance extraction) is in active
+development and will land as a separate repo.</p>
+<p>If you are a fencer, coach, or club interested in early access, watch this
+organization.</p>
+
+
+        
+    </article>
+
+    
+    <aside class="toc-sidebar">
+        <div class="toc-title">On this page</div>
+        <ul>
+        
+            <li>
+                <a href="https:&#x2F;&#x2F;grand-omega.github.io&#x2F;projects&#x2F;project-maitre&#x2F;#repositories">Repositories</a>
+                
+                <ul>
+                    
+                    <li><a href="https:&#x2F;&#x2F;grand-omega.github.io&#x2F;projects&#x2F;project-maitre&#x2F;#maitre-rust-server">maitre-rust-server</a></li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li>
+                <a href="https:&#x2F;&#x2F;grand-omega.github.io&#x2F;projects&#x2F;project-maitre&#x2F;#status">Status</a>
+                
+            </li>
+        
+        </ul>
+    </aside>
+    
+</div>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Grand Ωmega</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://grand-omega.github.io/elasticlunr.min.js"></script>
+    <script src="https://grand-omega.github.io/search_index.en.js"></script>
+    <script src="https://grand-omega.github.io/search.js"></script>
+    
+    <script>
+        (function() {
+            var theme = localStorage.getItem('theme');
+            if (!theme) {
+                theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.setAttribute('data-theme', theme);
+
+            document.getElementById('theme-toggle').addEventListener('click', function() {
+                var current = document.documentElement.getAttribute('data-theme');
+                var next = current === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', next);
+                localStorage.setItem('theme', next);
+            });
+        })();
+    </script>
+</body>
+</html>
