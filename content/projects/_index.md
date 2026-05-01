@@ -5,5 +5,5 @@ template = "section.html"
 page_template = "page.html"
 +++
 
-Active work at Grand Ωmega. Each project is small, focused, and designed to
-run on hardware you already own.
+Active work at Grand Ωmega — focused, single-purpose products across local
+AI, sport science, and specialty e-commerce.
