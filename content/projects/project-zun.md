@@ -2,6 +2,7 @@
 title = "Project ZUN"
 date = 2026-04-24
 description = "Local, self-hosted AI image editor built on FLUX.1 Fill and FLUX 2 klein. Runs on a single 16 GB consumer GPU."
+aliases = ["/projects/zun-flux-pipeline/"]
 +++
 
 **Project ZUN** is a complete, self-hosted stack for instruction-driven and
@@ -66,6 +67,13 @@ The client. A high-performance Android app optimized for the
 - Encrypted credential storage, `Authorization: Bearer` contract
 
 **Stack:** Kotlin, Jetpack Compose.
+
+### [zun-zola-site](https://github.com/grand-omega/zun-zola-site)
+
+The product-launch site for ZUN — branded phone-frame mockups, before/after
+galleries, and the marketing entry point.
+
+**Stack:** Zola, SCSS.
 
 ## Design philosophy
 
